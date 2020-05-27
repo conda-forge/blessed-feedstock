@@ -1,5 +1,5 @@
 {% set name = "blessed" %}
-{% set version = "1.17.5" %}
+{% set version = "1.17.6" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 926916492220af741657ec4668aba95f54a8c32445e765cfa38c7ccd3343cc6f
+  sha256: a9a774fc6eda05248735b0d86e866d640ca2fef26038878f7e4d23f7749a1e40
 
 build:
   number: 0
