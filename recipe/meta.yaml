@@ -18,14 +18,14 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.7
   run:
     - __{{ target_os }}
     {% if target_os == 'win' %}
     - jinxed >=0.5.4
     {% endif %}
     - ordereddict ==1.1
-    - python >=3.6
+    - python >=3.7
     - six >=1.9.0
     - wcwidth >=0.1.4
 
@@ -46,3 +46,4 @@ about:
 extra:
   recipe-maintainers:
     - hadim
+    - mattip
