@@ -1,6 +1,6 @@
 context:
   name: blessed
-  version: 1.20.0
+  version: "1.21.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/blessed-${{ version }}.tar.gz
-  sha256: 2cdd67f8746e048f00df47a2880f4d6acbcdb399031b604e34ba8f71d5787680
+  sha256: ece8bbc4758ab9176452f4e3a719d70088eb5739798cd5582c9e05f2a28337ec
 
 build:
   number: 0
