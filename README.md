@@ -144,4 +144,5 @@ Feedstock Maintainers
 =====================
 
 * [@hadim](https://github.com/hadim/)
+* [@mattip](https://github.com/mattip/)
 
