@@ -24,6 +24,7 @@ requirements:
     - pip
     - setuptools
   run:
+    - python >=${{ python_min }},<4.0
     - wcwidth >=0.1.4
     - jinxed >=1.1.0
 
