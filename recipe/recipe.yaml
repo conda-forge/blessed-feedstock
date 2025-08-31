@@ -26,11 +26,9 @@ requirements:
   run:
     - python >=${{ python_min }},<4.0
     - __${{ noarch_platform }}
-    - if: noarch_platform != "win"
+    - wcwidth >=0.1.4
+    - if: noarch_platform == "win"
       then:
-        - wcwidth >=0.1.4
-      else:
-        - wcwidth >=0.1.4
         - jinxed >=1.1.0
 tests:
   - python:
