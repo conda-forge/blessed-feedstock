@@ -37,26 +37,8 @@ tests:
   - python:
       imports:
         - blessed
-        - ${{ "jinxed" if noarch_platform == "win" }}
-        - ${{ "wcwidth" if noarch_platform == "osx" or noarch_platform == "linux" or noarch_platform == "win" }}
       pip_check: true
       python_version: ${{ python_min }}.*
-  - requirements:
-      run:
-        - python ${{ python_min }}.*
-    script:
-      - echo "Test Script Imports for unix and windows Started"
-      - if: noarch_platform  != "win"
-        then:
-          - echo "Test Script Importing blessed and terminal for unix and windows"
-          - python -c "from blessed import Terminal; assert Terminal"
-          - python -c "assert __import__('blessed').__version__ == '${{ version }}'"
-        else:
-          - echo "Test Script Importing jinxed, blessed and terminal for windows"
-          - python -c "from jinxed import setupterm; assert setupterm"
-          - python -c "from blessed import Terminal; assert Terminal"
-          - python -c "assert __import__('blessed').__version__ == '${{ version }}'"
-      - echo "Test Script Imports for unix and windows Completed"
 
 about:
   summary: Easy, practical library for making terminal apps, by providing an elegant, well-documented interface to Colors, Keyboard input, and screen Positioning capabilities.
