@@ -41,6 +41,7 @@ tests:
         - ${{ python_check_max }}.*
       imports:
         - blessed
+        - ${{ "jinxed" if noarch_platform == "win" }}
   - requirements:
       run:
         - pip
