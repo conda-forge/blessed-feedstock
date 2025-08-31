@@ -5,6 +5,10 @@ context:
   name: blessed
   version: "1.21.0"
   python_check_max: 3.13
+  noarch_dep: |-
+    ${{ "python" if noarch_platform == "linux" }}
+    ${{ "python" if noarch_platform == "osx" }}
+    ${{ "jinxed >=1.1.0" if noarch_platform == "win" }}
 
 package:
   name: ${{ name|lower }}
@@ -28,9 +32,7 @@ requirements:
     - __${{ noarch_platform }}
     - python >=${{ python_min }}
     - wcwidth >=0.1.4
-    - if: noarch_platform == "win"
-      then:
-        - jinxed >=1.1.0
+    - ${{ noarch_dep }}
 tests:
   - python:
       pip_check: true
