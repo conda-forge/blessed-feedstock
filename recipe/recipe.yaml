@@ -24,7 +24,6 @@ requirements:
     - pip
     - setuptools
   run:
-    - __${{ noarch_platform }}
     - wcwidth >=0.1.4
     - jinxed >=1.1.0
 
