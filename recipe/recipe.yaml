@@ -25,10 +25,10 @@ requirements:
     - pip
     - setuptools
   run:
-    - python >=${{ python_min }}
     - __${{ noarch_platform }}
+    - python >=${{ python_min }}
     - wcwidth >=0.1.4
-    - if: __${{ noarch_platform }} == "win"
+    - if: noarch_platform == "win"
       then:
         - jinxed >=1.1.0
 tests:
