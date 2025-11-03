@@ -28,7 +28,7 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
-    - setuptools
+    - flit_core >=3.11,<4
   run:
     - __${{ noarch_platform }}
     - python >=${{ python_min }}
