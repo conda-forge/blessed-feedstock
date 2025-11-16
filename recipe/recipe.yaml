@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: blessed
-  version: "1.23.0"
+  version: "1.24.0"
   python_check_max: 3.13
   noarch_dep: |-
     ${{ "python" if noarch_platform == "linux" }}
@@ -16,7 +16,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/blessed-${{ version }}.tar.gz
-  sha256: 56591a32966f704f6131f1400af4151d9e8f5f4144133a5ca034019763dee77b
+  sha256: 7822698616deb79dc8897215eef8ed56b6a3fc537dc08ffce2f2020697c6c0d4
 
 build:
 
