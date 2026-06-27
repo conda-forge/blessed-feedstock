@@ -3,12 +3,8 @@ schema_version: 1
 
 context:
   name: blessed
-  version: "1.33.0"
-  python_check_max: 3.13
-  noarch_dep: |-
-    ${{ "python" if noarch_platform == "linux" }}
-    ${{ "python" if noarch_platform == "osx" }}
-    ${{ "jinxed >=1.1.0" if noarch_platform == "win" }}
+  version: "1.43.0"
+  python_check_max: "3.13"
 
 package:
   name: ${{ name|lower }}
@@ -16,7 +12,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/blessed-${{ version }}.tar.gz
-  sha256: c732a1043042d84f411423a1a7b74643e1dd3a2271bd6e5955682dd4a321b0ef
+  sha256: acf55b31a10bb53dac0f7b42899233814bc4c726e8a1550df684cd7e558eb09f
 
 build:
 
@@ -32,8 +28,8 @@ requirements:
   run:
     - __${{ noarch_platform }}
     - python >=${{ python_min }}
-    - wcwidth >=0.1.4
-    - ${{ noarch_dep }}
+    - wcwidth >=0.7
+    - jinxed >=2.0,<3
 tests:
   - python:
       pip_check: true
