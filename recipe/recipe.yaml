@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: blessed
-  version: "1.45.0"
+  version: "1.47.0"
   python_check_max: "3.13"
 
 package:
@@ -12,7 +12,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/blessed-${{ version }}.tar.gz
-  sha256: d12abbbcfb5fdd80bac33ea7e22f1a163ff462f5c05f312159e04c5fee460c72
+  sha256: ea13e06ae40f24710325411c5fa9b689d215cf170276cf1fda41feddaec8d3e0
 
 build:
 
