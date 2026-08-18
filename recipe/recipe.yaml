@@ -2,20 +2,17 @@
 schema_version: 1
 
 context:
-  name: blessed
   version: "1.48.0"
-  python_check_max: "3.13"
 
 package:
-  name: ${{ name|lower }}
+  name: blessed
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/blessed-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/b/blessed/blessed-${{ version }}.tar.gz
   sha256: 5ed4c0d40d0121669ef949e4f23465982614eb821bd110d1d5a98ed97dea13d8
 
 build:
-
   number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -23,22 +20,21 @@ build:
 requirements:
   host:
     - python ${{ python_min }}.*
-    - pip
     - flit-core >=3.11,<4
+    - pip
   run:
-    - __${{ noarch_platform }}
     - python >=${{ python_min }}
-    - wcwidth >=0.7
-    - jinxed >=2.0,<3
+    - wcwidth >=0.8.1
+    - jinxed >=2.1,<3
+
 tests:
   - python:
+      imports:
+        - blessed
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - ${{ python_check_max }}.*
-      imports:
-        - blessed
-        - ${{ "jinxed" if noarch_platform == "win" }}
+        - "*"
   - requirements:
       run:
         - pip
@@ -62,10 +58,11 @@ tests:
         - echo "Test Script Imports for unix and windows Completed"
 
 about:
-  summary: Easy, practical library for making terminal apps, by providing an elegant, well-documented interface to Colors, Keyboard input, and screen Positioning capabilities.
+  summary: Easy, practical library for making terminal apps, by providing an elegant, well-documented interface for Terminals.
   license: MIT
   license_file: LICENSE
   homepage: https://github.com/jquast/blessed
+  documentation: https://blessed.readthedocs.io
 
 extra:
   recipe-maintainers:
