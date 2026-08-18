@@ -45,6 +45,8 @@ tests:
     script:
       content:
         - python -m pytest -vv tests/
+      env:
+        TEST_QUICK: 1
 
 about:
   summary: Easy, practical library for making terminal apps, by providing an elegant, well-documented interface for Terminals.
