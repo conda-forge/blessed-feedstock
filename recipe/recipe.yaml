@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "1.50.0"
+  version: "1.52.0"
 
 package:
   name: blessed
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/b/blessed/blessed-${{ version }}.tar.gz
-  sha256: 046c9b2a5283a9c5bc340ed23b7d1c1f10ef2d7fb30b14bae13ef7ffc1f3ba56
+  sha256: a6f42b2875c7afee78420ac9919699d5c3dce35bfa9ad45bc158b1713fc33d0d
 
 build:
   number: 0
